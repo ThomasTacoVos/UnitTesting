@@ -53,7 +53,5 @@
         {!! Form::close() !!}
     </div>
 @endcan
-
-
 @endsection
 

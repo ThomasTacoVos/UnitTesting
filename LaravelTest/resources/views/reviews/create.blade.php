@@ -41,7 +41,7 @@
             </div>
             <br>
             <div class="">
-                {!! Form::submit('Submit', array('class' => '')); !!}<br>
+                {!! Form::submit('Submit', array('class' => 'btn btn-dark')); !!}<br>
                 {!! Form::close() !!}
             </div>
         </div>

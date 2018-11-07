@@ -1,12 +1,24 @@
 @extends('layout')
 @section('content')
+    {{------------------Links to other cruds---------------------------------------------}}
+    <a href="/reviews">
+        <button type="button" class="btn btn-dark" >To reviews</button>
+    </a>
 
-    <button class="tablebutton" type="submit"><a href="/reviews">To reviews</a></button>
     @can('create products')
-    <button class="tablebutton" type="submit"><a href="/products">To products</a></button>
+        <a href="/products">
+            <button type="button" class="btn btn-dark" >To products</button>
+        </a>
     @endcan
-    <button class="tablebutton" type="submit"><a href="/users">To users</a></button>
 
+    <a href="/users">
+        <button type="button" class="btn btn-dark" >To users</button>
+    </a>
+
+    <a href="{{URL::to('reviews/create')}}">
+        <button type="button" class="btn btn-dark" >Create a new review</button>
+    </a>
+    {{-----------------------------------------------------------------------------------}}
     <table class="table">
         <thead class="thead-dark">
         <tr>
@@ -16,11 +28,9 @@
             <th scope="col">Username</th>
             <th scope="col">Body</th>
             <th scope="col">Rating</th>
-
             @can('delete reviews')
                 <th scope="col">Edit</th>
             @endcan
-
             @can('delete reviews')
                 <th scope="col">Delete</th>
             @endcan
@@ -47,9 +57,11 @@
                         {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
                         {{ Form::close() }}
                     @endcan
-                    @endforeach
+
                 </td>
             </tr>
             </tbody>
+        @endforeach
+
     </table>
 @endsection

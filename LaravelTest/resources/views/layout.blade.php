@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('css/jumbotron.css')}}" rel="stylesheet">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet">
 </head>
 
 <body>
